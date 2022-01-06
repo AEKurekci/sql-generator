@@ -54,9 +54,6 @@ public class ExcelToSqlImpl implements ExcelToSql {
                         switch (cell.getCellType()){
                             case STRING:
                                 String cellContent = cell.getStringCellValue();
-                                if(cellContent.contains("'")){
-                                    System.out.println(cellContent);
-                                }
                                 cellContent = cellContent.replace("'", "''");
                                 query += "'" + cellContent + "',";
                                 break;
